@@ -1,1 +1,1 @@
-web: gunicorn sistemaInvestigacion
+web: gunicorn sistemaInvestigacion.wsgi:application --bind 0.0.0.0:$PORT
