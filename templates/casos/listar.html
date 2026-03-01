@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h2>Listado de Casos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID Caso</th>
+            <th>N° Expediente</th>
+            <th>Tipo</th>
+            <th>Estatus</th>
+            <th>Investigador</th>
+            <th>Acciones</th>
+            <th>Alarma</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        {% for caso in casos %}
+        <tr>
+            <td>
+                <a href="{% url 'detalle_caso' caso.id %}" class="btn-id-caso">
+                    {{ caso.id_caso }}
+                </a>
+            </td>
+            <td>{{ caso.nro_expediente }}</td>
+            <td>{{ caso.tipo_caso }}</td>
+            <td>{{ caso.estatus }}</td>
+            <td>
+                {% if caso.investigador %}
+                    {{ caso.investigador.username }}
+                {% else %}
+                    Sin asignar
+                {% endif %}
+            </td>
+
+            <td>
+                {% if request.user.is_admin %}
+                    {% if not caso.investigador %}
+                        <a href="{% url 'asignar_investigador' caso.id %}" class="btn-accion">
+                            Asignar Investigador
+                        </a>
+                    {% else %}
+                        <a href="{% url 'asignar_investigador' caso.id %}" class="btn-accion">
+                            Reasignar Investigador
+                        </a>
+                    {% endif %}
+
+                    <a href="{% url 'cambiar_estatus' caso.id %}" class="btn-accion-sec">
+                        Cambiar Estatus
+                    </a>
+                {% endif %}
+
+                {% if not user.is_staff and caso.investigador == user %}
+                    <a href="{% url 'cambiar_estatus' caso.id %}" class="btn-secondary">
+                        Cambiar Estatus
+                    </a>
+                {% endif %}
+            </td>
+
+            <td>
+                {% if caso.nivel_alarma == "critico" %}
+                    <span class="badge-critico">🔴 Crítico</span>
+
+                {% elif caso.nivel_alarma == "advertencia" %}
+                    <span class="badge-advertencia">🟡 Advertencia</span>
+
+                {% else %}
+                    <span class="badge-normal">🟢 Normal</span>
+                {% endif %}
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}

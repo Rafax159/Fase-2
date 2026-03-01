@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h2>
+    {% if form.instance.pk %}
+        Modificar Caso
+    {% else %}
+        Registrar Caso
+    {% endif %}
+</h2>
+
+{% if form.errors %}
+    <div style="color: red;">
+        <strong>Errores del formulario:</strong>
+        {{ form.errors }}
+    </div>
+{% endif %}
+
+<div class="form-container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">
+                {% if form.instance.pk %}
+                    Actualizar Caso
+                {% else %}
+                    Guardar Caso
+                {% endif %}
+            </button>
+
+            <a href="{% url 'listar_casos' %}" class="btn-secondary">
+                Cancelar
+            </a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

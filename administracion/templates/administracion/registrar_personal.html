@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h2>Registrar Personal</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <input type="text" name="cedula" placeholder="Cédula" required><br><br>
+    <input type="text" name="nombre" placeholder="Nombre" required><br><br>
+    <input type="text" name="apellido" placeholder="Apellido" required><br><br>
+    <input type="text" name="empresa" placeholder="Empresa" required><br><br>
+
+    <select name="estado" required>
+        <option value="AMONESTADO">Amonestado</option>
+        <option value="DESINCORPORADO">Desincorporado</option>
+    </select><br><br>
+
+    <div style="margin-top:20px;">
+        <button type="submit" class="btn-admin btn-primario">
+            Guardar
+        </button>
+
+        <a href="{% url 'panel_admin' %}" class="btn-volver" style="margin-left:10px;">
+            Cancelar
+        </a>
+    </div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,766 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+/* HEADER */
+header {
+    background: #003366;
+    color: white;
+    padding: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background: #0055aa;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+/* CONTENIDO */
+main {
+    padding: 15px;
+    background: white;
+    margin: 15px;
+    border-radius: 6px;
+}
+
+/* TABLAS RESPONSIVAS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #eee;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+/* FORMULARIOS */
+form {
+    max-width: 600px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* LOGIN */
+body.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 📱 MEDIA QUERY */
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    th {
+        display: none;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+
+    td:nth-of-type(1)::before { content: "Título"; }
+    td:nth-of-type(2)::before { content: "Tipo"; }
+    td:nth-of-type(3)::before { content: "Estatus"; }
+    td:nth-of-type(4)::before { content: "Investigador"; }
+    td:nth-of-type(5)::before { content: "Acciones"; }
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 6px;
+    background: #fafafa;
+}
+
+
+
+
+/* ============================= */
+/* ===== FORMULARIO CASOS ====== */
+/* ============================= */
+
+.form-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.form-section {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+.form-section h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.form-grid.full {
+    grid-template-columns: 1fr;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    min-height: 90px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.section-content {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+/* Contenedor general */
+.content-container {
+    background: #f4f6f9;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background: #0b3c6d;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+/* Botones */
+.btn-ver {
+    background: #17a2b8;
+    color: white;
+    padding: 6px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-edit {
+    background: #ffc107;
+    color: black;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Detalle */
+.detalle-container {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+.nav-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-btn {
+    background-color: #0b3c6d;
+    color: white;
+    padding: 16px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-btn:hover {
+    background-color: #145da0;
+}
+
+
+
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+.btn-accion {
+    background-color: #17a2b8;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.btn-accion-sec {
+    background-color: #6c757d;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+
+
+.acciones-detalle {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: black;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: white;
+}
+
+.btn-volver {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #6c757d;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: white;
+}
+
+
+.btn-id-caso {
+    background-color: #0d6efd;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-id-caso:hover {
+    background-color: #0b5ed7;
+    transform: scale(1.05);
+}
+
+.btn-id-caso:visited {
+    color: white;
+}
+
+
+.acciones-detalle {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5c636a;
+}
+
+
+.btn-cancel {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #adb5bd;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-cancel:hover {
+    background-color: #868e96;
+}
+
+
+
+
+
+/* Contenedor general */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f6f9;
+}
+
+/* Caja del login */
+.login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Título */
+.login-box h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #343a40;
+}
+
+/* Botón */
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #0b5ed7;
+}
+
+
+
+
+.logout-form {
+    display: inline;
+    margin-left: auto;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: #bb2d3b;
+}
+
+
+
+
+.btn-primary {
+    padding: 15px 16px;
+    background-color: #0b3c6d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+/* Contenedor del panel */
+.panel-admin {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Títulos */
+.panel-admin h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Grupo de botones */
+.grupo-botones {
+    margin-bottom: 30px;
+}
+
+/* Botón base */
+.btn-admin {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Botón azul */
+.btn-primario {
+    background-color: #1e88e5;
+    color: white;
+}
+
+.btn-primario:hover {
+    background-color: #1565c0;
+    transform: translateY(-2px);
+}
+
+/* Botón verde */
+.btn-secundario {
+    background-color: #43a047;
+    color: white;
+}
+
+.btn-secundario:hover {
+    background-color: #2e7d32;
+    transform: translateY(-2px);
+}
+
+/* Botón gris */
+.btn-consulta {
+    background-color: #546e7a;
+    color: white;
+}
+
+.btn-consulta:hover {
+    background-color: #37474f;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* Botón volver / cancelar */
+.btn-volver {
+    display: inline-block;
+    padding: 10px 18px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    background-color: #9e9e9e;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: #616161;
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+/* ============================= */
+/* PANEL DE REPORTES */
+/* ============================= */
+
+.panel-reportes {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.panel-reportes h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Botones reportes */
+.btn-reporte {
+    display: inline-block;
+    padding: 12px 22px;
+    margin: 12px 0;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #673ab7;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-reporte:hover {
+    background-color: #4527a0;
+    transform: translateY(-2px);
+}
+
+/* ============================= */
+/* TABLAS REPORTES */
+/* ============================= */
+
+.tabla-reporte {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.tabla-reporte th {
+    background-color: #512da8;
+    color: white;
+    padding: 12px;
+}
+
+.tabla-reporte td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabla-reporte tr:hover {
+    background-color: #f3e5f5;
+}
+
+
+
+
+/* ============================= */
+/* ALARMAS POR ANTIGÜEDAD */
+/* ============================= */
+
+.badge-normal {
+    background-color: #43a047;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.badge-advertencia {
+    background-color: #fbc02d;
+    color: black;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.badge-critico {
+    background-color: #e53935;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    animation: parpadeo 1s infinite alternate;
+}
+
+@keyframes parpadeo {
+    from { opacity: 1; }
+    to { opacity: 0.6; }
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2>Cambiar Estatus del Caso</h2>
+
+<p><strong>ID:</strong> {{ caso.id_caso }}</p>
+<p><strong>Estatus actual:</strong> {{ caso.estatus }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn-accion">
+        Guardar Cambio
+    </button>
+
+    <a href="{% url 'listar_casos' %}" class="btn-cancel">
+        Cancelar
+    </a>
+
+</form>
+
+{% endblock %}

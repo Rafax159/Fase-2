@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Investigación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Sistema de Gestión de Casos</h1>
+    <nav>
+
+        {% if request.user.is_admin %}
+            <a href="{% url 'listar_casos' %}" class="nav-btn">
+                Lista de Casos
+            </a>
+        {% endif %}
+        
+        <div class="nav-buttons">
+            <a href="{% url 'crear_caso' %}" class="nav-btn">
+                    Registrar Caso
+            </a>
+        </div>
+
+        {% if user.is_staff %}
+            <a href="{% url 'panel_admin' %}" class="nav-btn">
+                Administración
+            </a>
+        {% endif %}
+
+        {% if not user.is_staff %}
+            <a href="{% url 'panel_reportes' %}" class="nav-btn">
+                Reportes
+            </a>
+        {% endif %}
+
+
+        {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="btn-logout">
+                    Cerrar Sesión
+                </button>
+            </form>
+        {% endif %}
+       
+    </nav>
+
+
+
+</header>
+
+<main>
+    {% block contenido %}
+    {% endblock %}
+</main>
+
+</body>
+</html>

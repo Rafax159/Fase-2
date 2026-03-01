@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2>Detalle del Caso</h2>
+
+<div class="detalle-container">
+
+<p><strong>ID:</strong> {{ caso.id_caso }}</p>
+<p><strong>N° Expediente:</strong> {{ caso.nro_expediente }}</p>
+<p><strong>Tipo:</strong> {{ caso.tipo_caso }}</p>
+<p><strong>Estatus:</strong> {{ caso.estatus }}</p>
+<p><strong>Investigador:</strong> {{ caso.investigador }}</p>
+<p><strong>Fecha Inicio:</strong> {{ caso.fecha_inicio }}</p>
+<p><strong>Móvil Afectado:</strong> {{ caso.movil_afectado }}</p>
+<p><strong>Objetivo/Agraviado:</strong> {{ caso.objetivo_agraviado }}</p>
+<p><strong>Incidencia:</strong> {{ caso.incidencia }}</p>
+<p><strong>Duración:</strong> {{ caso.duracion_dias }} días</p>
+<p><strong>Descripción:</strong> {{ caso.descripcion_modus_operandi }}</p>
+<p><strong>Diagnóstico:</strong> {{ caso.diagnostico }}</p>
+<p><strong>Conclusiones:</strong> {{ caso.conclusiones }}</p>
+
+</div>
+
+{% if request.user.is_admin %}
+<div class="acciones-detalle">
+
+    <a href="{% url 'modificar_caso' caso.id %}" class="btn-warning">
+        Modificar Caso
+    </a>
+
+    <form action="{% url 'eliminar_caso' caso.id %}" method="post" onsubmit="return confirm('¿Seguro que deseas eliminar este caso?');" 
+    style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn-danger">
+            Eliminar
+        </button>
+    </form>
+
+    <a href="{% url 'cambiar_estatus' caso.id %}" class="btn-secondary">
+        Cambiar Estatus
+    </a>
+
+</div>
+{% endif %}
+
+<a href="{% url 'listar_casos' %}" class="btn-volver">
+    Volver a la lista
+</a>
+
+{% endblock %}

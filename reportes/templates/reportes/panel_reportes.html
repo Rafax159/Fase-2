@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<div class="panel-reportes">
+
+    <h2>Panel de Reportes</h2>
+
+    <a href="{% url 'generar_reporte' 'empresas' %}" class="btn-reporte">
+        Empresas con más casos
+    </a>
+
+    <br>
+
+    <a href="{% url 'generar_reporte' 'investigadores' %}" class="btn-reporte">
+        Investigadores con más casos
+    </a>
+
+</div>
+
+{% endblock %}

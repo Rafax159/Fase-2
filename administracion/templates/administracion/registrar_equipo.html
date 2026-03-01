@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h2>Registrar Equipo Robado</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <input type="text" name="serial" placeholder="Serial" required><br><br>
+    <input type="text" name="tipo_equipo" placeholder="Tipo de Equipo" required><br><br>
+    <input type="text" name="marca" placeholder="Marca" required><br><br>
+    <input type="text" name="modelo" placeholder="Modelo" required><br><br>
+
+    <textarea name="observaciones" placeholder="Observaciones"></textarea><br><br>
+
+    <div style="margin-top:20px;">
+        <button type="submit" class="btn-admin btn-primario">
+            Guardar
+        </button>
+
+        <a href="{% url 'panel_admin' %}" class="btn-volver" style="margin-left:10px;">
+            Cancelar
+        </a>
+    </div>
+
+</form>
+
+{% endblock %}

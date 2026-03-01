@@ -1,0 +1,17 @@
+<h2>Investigadores</h2>
+
+<a href="{% url 'crear_usuario' %}">Crear nuevo investigador</a>
+
+<table border="1">
+    <tr>
+        <th>Usuario</th>
+        <th>Email</th>
+    </tr>
+
+    {% for u in usuarios %}
+    <tr>
+        <td>{{ u.username }}</td>
+        <td>{{ u.email }}</td>
+    </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h2>Cerrar Caso</h2>
+
+<p><strong>Caso:</strong> {{ caso.titulo }}</p>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Observaciones</label>
+    <textarea name="observaciones" required></textarea>
+
+    <label>Conclusiones</label>
+    <textarea name="conclusiones" required></textarea>
+
+    <label>Recomendaciones</label>
+    <textarea name="recomendaciones" required></textarea>
+
+    <button type="submit">Cerrar Caso</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h2>Equipos Robados Registrados</h2>
+
+<table border="1">
+    <tr>
+        <th>Serial</th>
+        <th>Tipo</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Observaciones</th>
+        <th>Fecha</th>
+    </tr>
+
+    {% for equipo in equipos %}
+    <tr>
+        <td>{{ equipo.serial }}</td>
+        <td>{{ equipo.tipo_equipo }}</td>
+        <td>{{ equipo.marca }}</td>
+        <td>{{ equipo.modelo }}</td>
+        <td>{{ equipo.observaciones }}</td>
+        <td>{{ equipo.fecha_registro }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="6">No hay equipos registrados.</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<a href="{% url 'panel_admin' %}" class="btn-volver">
+    Volver al panel
+</a>
+
+{% endblock %}

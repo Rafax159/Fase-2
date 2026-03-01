@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h2>Personal Sancionado Registrado</h2>
+
+<table border="1">
+    <tr>
+        <th>Cédula</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Empresa</th>
+        <th>Estado</th>
+        <th>Fecha</th>
+    </tr>
+
+    {% for p in personal %}
+    <tr>
+        <td>{{ p.cedula }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.apellido }}</td>
+        <td>{{ p.empresa }}</td>
+        <td>{{ p.estado }}</td>
+        <td>{{ p.fecha_registro }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="6">No hay personal registrado.</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<a href="{% url 'panel_admin' %}" class="btn-volver">
+    Volver al panel
+</a>
+
+{% endblock %}

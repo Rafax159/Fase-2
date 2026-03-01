@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="panel-admin">
+
+    <h2>Panel de Administración</h2>
+
+    <div class="grupo-botones">
+        <a href="{% url 'registrar_equipo' %}" class="btn-admin btn-primario">
+            Registrar equipo robado
+        </a>
+    </div>
+
+    <div class="grupo-botones">
+        <a href="{% url 'registrar_personal' %}" class="btn-admin btn-secundario">
+            Registrar personal Sancionado/Desincorporado
+        </a>
+    </div>
+
+    <hr>
+
+    <div class="grupo-botones">
+        <a href="{% url 'listar_equipos' %}" class="btn-admin btn-consulta">
+            Ver Equipos Registrados
+        </a>
+    </div>
+
+    <div class="grupo-botones">
+        <a href="{% url 'listar_personal' %}" class="btn-admin btn-consulta">
+            Ver Personal Registrado
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
