@@ -263,3 +263,12 @@ def obtener_alarmas(usuario):
                 alarmas.append(f"El caso {caso.id_caso} está vencido")
 
     return alarmas
+
+@login_required
+def mis_casos(request):
+    casos = Caso.objects.filter(investigador=request.user)
+    return render(request, 'casos/listar.html', {
+        'casos': casos
+    })
+
+    

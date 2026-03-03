@@ -18,6 +18,12 @@
                 Lista de Casos
             </a>
         {% endif %}
+
+        {% if not user.is_staff %}
+            <a href="{% url 'listar_casos' %}" class="nav-btn">
+                Mis Casos
+            </a>
+        {% endif %}
         
         <div class="nav-buttons">
             <a href="{% url 'crear_caso' %}" class="nav-btn">
@@ -36,6 +42,8 @@
                 Reportes
             </a>
         {% endif %}
+
+
 
 
         {% if user.is_authenticated %}
