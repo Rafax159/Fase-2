@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import FileExtensionValidator
 
 class Caso(models.Model):
 
@@ -48,7 +49,16 @@ class Caso(models.Model):
     conclusiones = models.TextField()
     observaciones = models.TextField()
 
-    soporte = models.FileField(upload_to='soportes/', null=True, blank=True)
+    soporte = models.FileField(
+        upload_to='soportes/',
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=['pdf', 'jpg', 'jpeg', 'png']
+            )
+        ],
+        blank=True,
+        null=True
+    )
 
     ESTATUS = [
         ('ABIERTO', 'Abierto'),

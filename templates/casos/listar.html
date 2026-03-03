@@ -13,6 +13,7 @@
             <th>Investigador</th>
             <th>Acciones</th>
             <th>Alarma</th>
+            <th>Soporte</th>
         </tr>
     </thead>
 
@@ -69,6 +70,16 @@
 
                 {% else %}
                     <span class="badge-normal">🟢 Normal</span>
+                {% endif %}
+            </td>
+
+            <td>
+                {% if caso.soporte %}
+                    <a href="{{ caso.soporte.url }}" target="_blank" class="btn btn-sm btn-primary">
+                        Ver Soporte
+                    </a>
+                {% else %}
+                    <span class="text-muted">Sin soporte</span>
                 {% endif %}
             </td>
 
