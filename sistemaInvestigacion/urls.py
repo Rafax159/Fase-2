@@ -20,9 +20,10 @@ from .views import inicio
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
+from usuarios.views import seleccionar_rol
 
 urlpatterns = [
-    path('', inicio, name='inicio'),
+    path('', include('usuarios.urls')),
     path('admin/', admin.site.urls),
     path('casos/', include('casos.urls')),
     path('accounts/', include('django.contrib.auth.urls')),

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Seleccionar Rol</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body class="rol-body">
+
+<div class="rol-container">
+    <h2>Bienvenido</h2>
+    <p class="rol-subtitle">Seleccione cómo desea iniciar sesión</p>
+
+    <div class="rol-buttons">
+        <a href="{% url 'login' %}?rol=admin" class="rol-btn admin">
+            👨‍💼 Administrador
+        </a>
+
+        <a href="{% url 'login' %}?rol=investigador" class="rol-btn investigador">
+            🕵️ Investigador
+        </a>
+    </div>
+</div>
+</body>
+</html>

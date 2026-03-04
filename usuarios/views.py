@@ -33,3 +33,6 @@ def listar_usuarios(request):
     return render(request, 'usuarios/listar.html', {
         'usuarios': usuarios
     })
+
+def seleccionar_rol(request):
+    return render(request, 'usuarios/seleccionar_rol.html')

@@ -764,3 +764,116 @@ a:hover {
     from { opacity: 1; }
     to { opacity: 0.6; }
 }
+
+
+
+
+
+
+
+
+.btn-soporte {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-soporte:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #1e40af, #1e3a8a);
+}
+
+.btn-soporte:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+/* Fondo igual al login */
+.rol-body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Contenedor centrado */
+.rol-container {
+    background: #ffffff;
+    width: 380px;
+    padding: 40px 35px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+/* Título */
+.rol-container h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* Subtítulo */
+.subtitle {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Botones */
+.rol-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Botón base */
+.rol-btn {
+    display: block;
+    padding: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Admin */
+.rol-btn.admin {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.rol-btn.admin:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Investigador */
+.rol-btn.investigador {
+    background: linear-gradient(135deg, #059669, #065f46);
+}
+
+.rol-btn.investigador:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(5, 150, 105, 0.4);
+}
