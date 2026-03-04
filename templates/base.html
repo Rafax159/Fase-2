@@ -28,7 +28,7 @@
         
         <div class="nav-buttons">
             <a href="{% url 'crear_caso' %}" class="nav-btn">
-                    Registrar Caso
+                Registrar Caso
             </a>
         </div>
 
@@ -44,9 +44,6 @@
             </a>
         {% endif %}
 
-
-
-
         {% if user.is_authenticated %}
             <form action="{% url 'logout' %}" method="post" class="logout-form">
                 {% csrf_token %}
@@ -57,9 +54,6 @@
         {% endif %}
        
     </nav>
-
-
-
 </header>
 
 <main>
