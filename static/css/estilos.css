@@ -877,3 +877,17 @@ a:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(5, 150, 105, 0.4);
 }
+
+
+
+
+
+
+.error-message {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}

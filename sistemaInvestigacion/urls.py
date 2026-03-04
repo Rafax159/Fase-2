@@ -21,12 +21,15 @@ from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
 from usuarios.views import seleccionar_rol
+from usuarios.views import CustomLoginView
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', include('usuarios.urls')),
     path('admin/', admin.site.urls),
     path('casos/', include('casos.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     path('usuarios/', include('usuarios.urls')),
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('administracion/', include('administracion.urls')),
